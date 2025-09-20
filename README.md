@@ -1,4 +1,4 @@
-# Challenge-One
+# Challenge One
 Resolução do desafio do programa Oracle Next Education.
 
 # Sorteador de Amigo Secreto
