@@ -1,0 +1,220 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button-draw: #fe652b;
+    --color-button-draw-hover: #e55720;
+    --color-button-reset: #0a7c0a;
+    --color-button-reset-hover: #086308;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+    --font-primary: "Inter", sans-serif;
+    --font-secondary: "Merriweather", serif;
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-primary);
+    padding: 1rem; /* Adicionado para evitar que o conteúdo cole nas bordas em telas pequenas */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 800px; /* Limita a largura máxima em telas grandes */
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Banner */
+.header-banner {
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+}
+
+.header-banner img {
+    max-width: 100px;
+}
+
+/* Seção de entrada */
+.input-section {
+    flex: 1; /* Permite que esta seção cresça e ocupe o espaço restante */
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for muito grande */
+}
+
+/* Títulos */
+.main-title {
+    font-size: clamp(2rem, 5vw, 3rem); /* Fonte responsiva */
+    font-family: var(--font-secondary);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem); /* Fonte responsiva */
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Contêineres de entrada e botão */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+}
+
+.input-name {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #000;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+}
+
+/* Estilos de botão */
+button {
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.button-add {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+/* Listas */
+.friends-list-title {
+    font-weight: bold;
+    color: var(--color-text);
+    margin-top: 1rem;
+}
+
+.name-list {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result-list {
+    margin-top: 1.5rem;
+    color: #05DF05;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Contêiner para botões de ação */
+.button-container {
+    display: flex;
+    gap: 1rem; /* Espaçamento entre os botões */
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+    justify-content: center;
+}
+
+/* Botão de sortear */
+.button-draw {
+    color: var(--color-white);
+    background-color: var(--color-button-draw);
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-draw-hover);
+}
+
+/* Novo botão de reiniciar */
+.button-reset {
+    color: var(--color-white);
+    background-color: var(--color-button-reset);
+}
+
+.button-reset:hover {
+    background-color: var(--color-button-reset-hover);
+}
+
+/* Classe para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 600px) {
+    .header-banner {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+    }
+
+    .header-banner img {
+        max-width: 80px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
