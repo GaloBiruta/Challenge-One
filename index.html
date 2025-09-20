@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Merriweather:ital,wght@0;400;700;900&display=swap" rel="stylesheet">
+    <title>Amigo Secreto</title>
+</head>
+
+<body>
+<main class="main-content">
+    <header class="header-banner">
+        <h1 class="main-title">Amigo Secreto</h1>
+        <img src="assets/amigo-secreto.png" alt="Pessoas trocando presentes">
+    </header>
+
+    <section class="input-section">
+        <h2 id="titulo-amigos" class="section-title">Adicione os participantes</h2>
+        <div class="input-wrapper">
+            <label for="amigo" class="sr-only">Nome do amigo</label>
+            <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
+            <button type="button" class="button-add">Adicionar</button>
+        </div>
+
+        <p class="friends-list-title">Amigos na brincadeira:</p>
+        <ul id="listaAmigos" class="name-list" aria-labelledby="titulo-amigos" role="list"></ul>
+
+        <div id="resultado" class="result-list" aria-live="polite"></div>
+
+        <div class="button-container">
+            <button type="button" class="button-draw">
+                <img src="assets/play_circle_outline.png" alt="">
+                Sortear
+            </button>
+            <button type="button" class="button-reset">
+                <img src="assets/restart.png" alt=""> Reiniciar
+            </button>
+        </div>
+    </section>
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>
